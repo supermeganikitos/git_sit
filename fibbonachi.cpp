@@ -5,26 +5,22 @@ using namespace std;
 int fib(int n, int first, int last)
 {
     int a;
-    a = last;
-    last += first;
-    first = a;
-    if (n > 0)
+    for(int i =3; i <= n; i ++)
     {
-        return fib(n - 1, first, last);
+        a = last;
+        last += first;
+        first = a;
     }
-    else
-    {
-        return last;
-    }
+    return last;
 }
 
 int main()
 {
     int n;
     setlocale(LC_ALL, "rus");
-    cout << "фиббоначи рекурсивный \n";
+    cout << "фиббоначи итеративный \n";
     cout << "Введите число";
     cin >> n;
     cout << "\n";
-    cout << n << "-ое число фиббоначи: " << fib(n - 3, 0, 1);
+    cout << n << "-ое число фиббоначи: " << fib(n, 0, 1);
 }
