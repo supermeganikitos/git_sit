@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+
+int fib(int n, int first, int last)
+{
+    int a;
+    a = last;
+    last += first;
+    first = a;
+    if (n > 0)
+    {
+        return fib(n - 1, first, last);
+    }
+    else
+    {
+        return last;
+    }
+}
+
+int main()
+{
+    int n;
+    setlocale(LC_ALL, "rus");
+    cout << "фиббоначи рекурсивный \n";
+    cout << "Введите число";
+    cin >> n;
+    cout << "\n";
+    cout << n << "-ое число фиббоначи: " << fib(n - 3, 1, 1);
+}
